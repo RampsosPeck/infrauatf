@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
+
+    <link rel="shortcut icon" href="{!! URL::to('/img/favicon2.png') !!}" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    {!! Html::style('css/wellcome/agency.min.css') !!}
+    <!-- Custom Fonts -->
+    {!! Html::style('css/wellcome/font-awesome.min.css') !!}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -18,18 +27,8 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                   <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}"><strong>Welcome To Our Website!</strong>
                     </a>
                 </div>
 
@@ -43,7 +42,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('login') }}">Ingresar</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
@@ -76,5 +75,19 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- jQuery -->
+    {!! Html::script('js/wellcome/jquery.min.js') !!}
+
+    <!-- Bootstrap Core JavaScript -->
+    {!! Html::script('js/wellcome/bootstrap.min.js') !!}
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+
+    {!! Html::script('js/wellcome/jqBootstrapValidation.js') !!}
+    {!! Html::script('js/wellcome/contact_me.js') !!}
+
+    <!-- Theme JavaScript -->
+    {!! Html::script('js/wellcome/agency.min.js') !!}
 </body>
 </html>

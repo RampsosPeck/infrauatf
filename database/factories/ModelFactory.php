@@ -12,13 +12,21 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(Infrauatf\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'name'    => $faker->firstNameFemale,
+        'surname' => $faker->lastName,
+        'cedula'  => $faker->unique()->numberBetween($min = 1000, $max = 9000),
+        'celular' => $faker->unique()->numberBetween($min = 1000, $max = 9000),
+        'email'   => $faker->unique()->safeEmail,
+        'tipo'    => $faker->randomElement(['administrator','director','supervisor','personal']),
+        'cargo'   => $faker->randomElement(['automotores','mecanico','conductor','responsable','mensajero','secretaria']),
+        'entidad' => $faker->company,
         'password' => $password ?: $password = bcrypt('secret'),
+        'active'=> $faker->boolean,
+        'insertador'=> $faker->name,
         'remember_token' => str_random(10),
     ];
 });
