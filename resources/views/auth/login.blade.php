@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel-heading">
+            <div class="">
                 <div class="text-center"><h3><strong>DEPARTAMENTO DE INFRAESTRUCTURA</strong> </h3></div>
-                <div class="panel-body">
+                <div class="">
                     <center><img class="img-circle" width="150" src="{!! URL::to('/img/uatf.jpg') !!}"></center>
                     <br>
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -16,7 +16,7 @@
                             <label for="email" class="col-md-4 control-label"><h4><strong>Cedula de Identidad</strong></h4></label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Cedula de Identidad">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Cédula de Identidad">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
